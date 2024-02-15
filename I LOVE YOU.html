@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>I LOVE YOU</title>
+    <style>
+        /* CSS */
+        body {
+            position: relative;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-container {
+            position: relative;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 20px; /* Adjust this value to set the space between the image and text */
+        }
+
+        .button {
+            align-items: center;
+            background-color: #fee6e3;
+            border: 2px solid #111;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #111;
+            cursor: pointer;
+            display: flex;
+            font-family: Inter, sans-serif;
+            font-size: 16px;
+            height: 48px;
+            justify-content: center;
+            line-height: 24px;
+            max-width: 100%;
+            padding: 0 25px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+                   }
+
+            .button:after {
+                background-color: #111;
+                border-radius: 8px;
+                content: "";
+                display: block;
+                height: 48px;
+                left: 0;
+                width: 100%;
+                position: absolute;
+                top: -2px;
+                transform: translate(8px, 8px);
+                transition: transform .2s ease-out;
+                z-index: -1;
+            }
+
+            .button:hover:after {
+                transform: translate(0, 0);
+            }
+
+            .button:active {
+                background-color: #ffdeda;
+                outline: 0;
+            }
+
+            .button:hover {
+                outline: 0;
+            }
+
+        @media (min-width: 768px) {
+            .button {
+                padding: 0 40px;
+            }
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .popup {
+            background: black;
+            padding: 20px;
+            border-radius: 10px;
+            width:500px;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px #000000;
+            margin: auto;
+            margin-top: 20%;
+            position: relative;
+            color: white;
+        }
+
+            .popup img {
+                margin: 0 auto 20px; /* Adjust this value to set the space between the image and text */
+            }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            text-decoration: none;
+            color: #333;
+        }
+
+            .close:hover {
+                color: #900;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="content-container">
+        <img src="yoda1.gif" alt="My cool gif">
+        <a class="button" id="button">Click Me!</a>
+    </div>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <img src="love.gif" alt="My cool gif">
+            <h2>I LOVE YOU</h2>
+            <div class="content">
+                Thank you so much for appearing in my life. I Love You.
+            </div>
+            <a class="close" href="#" id="close">&times;</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var button = document.getElementById('button');
+            var overlay = document.querySelector('.overlay');
+            var closeButton = document.getElementById('close');
+
+            button.addEventListener('click', function () {
+                overlay.style.display = 'block';
+            });
+
+            closeButton.addEventListener('click', function () {
+                overlay.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
